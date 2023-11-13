@@ -1,0 +1,67 @@
+*  {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+.App {
+  width: 100%;
+  min-height: 200vh;
+  display: grid;
+  place-items: center;
+  background-color: #282c34;
+  color: white;
+}
+
+/* Motor de búsqueda sin abrir */
+.motor-busqueda_container {
+  position: fixed;
+  top: 85vh;
+  width: 100%;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+  transition: top .7s ease-in-out;
+}
+
+.motor-busqueda_container > * {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.motor-busqueda_container .btn-close_container {
+  display: none;
+  justify-content: flex-end;
+  padding: 5px 0;
+}
+
+.motor-busqueda_container .btn-close_container .btn-close {
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.motor-busqueda_container .motor-busqueda {
+  z-index: 30;
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+/* Motor de búsqueda abierto */
+.motor-busqueda_container.open {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255,255,255,.8);
+  padding: 50px;
+}
+
+.motor-busqueda_container.open .btn-close_container {
+  display: flex;
+}
