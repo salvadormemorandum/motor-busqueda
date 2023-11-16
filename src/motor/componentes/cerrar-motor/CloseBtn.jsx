@@ -2,12 +2,12 @@
 import { PropTypes } from 'prop-types'
 
 // Iconos
-import { CloseIcon } from '../Iconos'
+import { getIcon } from '../api'
 
 function CloseBtn({ close }) {
     return (
         <button className="btn-close" onClick={close}>
-            <CloseIcon />
+            {getIcon('close')}
         </button>
     )
 }

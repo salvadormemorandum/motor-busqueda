@@ -2,15 +2,24 @@ import { useState } from 'react';
 
 // Componentes
 import CloseBtn from './componentes/cerrar-motor/CloseBtn';
-import { LupaIcon } from './componentes/Iconos';
+import InputSearch from './componentes/input-busqueda/InputSearch';
+
+// Datos
+import { datosEntrada } from './componentes/constans';
 
 function MotorBusqueda() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  /**
+   * Función para cerrar el motor de búsqueda
+   */
   function closeSearch() {
     setIsSearchOpen(false);
   }
 
+  /**
+   * Función para abrir el motor de búsqueda
+   */
   function openSearch() {
     setIsSearchOpen(true);
   }
@@ -21,16 +30,13 @@ function MotorBusqueda() {
         <CloseBtn close={closeSearch} />
       </section>
       <form action="" className="motor-busqueda" onClick={openSearch}>
-        <section className="busqueda">
-          <LupaIcon />
-          <p className="busqueda_name">Hoteles y destinos</p>
+        {datosEntrada.map((dato) => <InputSearch key={dato.id} isSearchOpen={isSearchOpen} id={dato.id} inputName={dato.name} inputIcon={dato.icon} />)}
+        <section className="motor-busqueda_submit-container">
+          <input type="submit" value="Buscar" className="motor-busqueda_submit" />
         </section>
-        <section className="busqueda"></section>
-        <section className="busqueda"></section>
-        <section className="busqueda"></section>
       </form>
     </section>
   )
 }
 
-export default MotorBusqueda
+export default MotorBusqueda;
