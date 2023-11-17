@@ -85,10 +85,24 @@ html, body {
   border: 1px solid rgba(222, 226, 230);
   border-top: 0;
   background-color: white;
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 16px 8px;
+  padding: 16px 0;
   max-height: 80vh;
+}
+
+/* Scroll bar css */
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown::-webkit-scrollbar-button {
+  display: none;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown::-webkit-scrollbar {
+  width: 5px;
+  border-left: 1px solid rgba(222, 226, 230);
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(242,242,242);
+  border-radius: 2px;
+  border: 1px solid rgba(222, 226, 230);
 }
 
 .motor-busqueda_container .motor-busqueda .motor-busqueda_submit-container {
@@ -134,6 +148,113 @@ html, body {
 }
 
 /* Dropdown de destinos y hoteles */
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos {
+  overflow-y: auto;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos {
+  margin: 0 0 12px 0;
+}
+
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos h2.destino {
-  
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #323232;
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+  padding: 0 8px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos h3.ubicacion {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(91, 126, 150);
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+  padding: 0 8px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list {
+  margin: 0 0 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+  color: #323232;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel:hover {
+  background-color: rgba(242,242,242);
+}
+
+/* Dropdown calendario */
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.calendar {
+  position: relative;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar {
+  position: absolute;
+  top: 0;
+  background-color: white;
+  width: 500px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-header .btn-next,
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-header .btn-prev {
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+  padding: 0;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-header .current-months {
+  color: #323232;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .month {
+  flex-grow: 1;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .month:first-of-type {
+  padding-right: 16px;
+  border-right: 1px solid rgba(222, 226, 230);
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .month:last-of-type {
+  padding-left: 16px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .month ul.week-days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #000;
 }

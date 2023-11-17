@@ -1,5 +1,5 @@
 // Iconos
-import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon } from "./Iconos"
+import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon, ArrowLeft, ArrowRight } from "./Iconos"
 
 // Dropdowns
 import HotelesDestinos from "./dropdowns/HotelesDestinos"
@@ -23,6 +23,10 @@ export function getIcon(iconName) {
             return <PersonasIcon />
         case 'codigo':
             return <CodigoIcon />
+        case 'arrow-left':
+            return <ArrowLeft />
+        case 'arrow-right':
+            return <ArrowRight />
         default:
             return null
     }

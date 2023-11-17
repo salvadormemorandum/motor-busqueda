@@ -1,7 +1,10 @@
+// Componentes
+import Calendar from "../bloque-calendario/Calendar";
+
 function Calendario() {
     return (
-        <section className="busqueda_dropdown">
-            Calendario dropdown
+        <section className="busqueda_dropdown calendar">
+            <Calendar />
         </section>
     )
 }

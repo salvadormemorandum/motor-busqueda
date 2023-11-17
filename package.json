@@ -10,11 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "i18next": "^23.7.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.18",
+    "@mui/x-date-pickers": "^6.18.1",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.11.10",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^13.5.0"
+    "react-date-range": "^1.4.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -68,3 +68,27 @@ export function CodigoIcon() {
         </svg>
     )
 }
+
+/**
+ * Icono de flecha izquierda
+ * @returns 
+ */
+export function ArrowLeft() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.9025 12.9973L20.9025 11.0033L5.92602 11.0028L10.586 6.3431L9.17184 4.92883L2.10054 11.9997L9.17137 19.071L10.5856 17.6568L5.92595 12.9968L20.9025 12.9973Z" fill="#323232" />
+        </svg>
+    )
+}
+
+/**
+ * Icono de flecha derecha
+ * @returns 
+ */
+export function ArrowRight() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.0971 11.0071L3.09802 13.0012L18.0745 12.9942L13.4169 17.6562L14.8317 19.0698L21.8995 11.9954L14.8252 4.92762L13.4116 6.34249L18.0736 11.0002L3.0971 11.0071Z" fill="#323232" />
+        </svg>
+    )
+}

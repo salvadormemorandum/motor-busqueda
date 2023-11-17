@@ -48,8 +48,8 @@ function InputSearch({ isSearchOpen, id, inputName, inputIcon }) {
     }, [isSearchOpen]);
 
     return (
-        <section className="busqueda">
-            <section className="busqueda_input" onClick={openDropdown} ref={inputRef}>
+        <section className="busqueda" ref={inputRef}>
+            <section className="busqueda_input" onClick={openDropdown}>
                 {getIcon(inputIcon)}
                 <input className="busqueda_input_name" type='text' id='' placeholder={inputName}></input>
             </section>
