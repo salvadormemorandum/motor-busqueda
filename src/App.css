@@ -204,10 +204,12 @@ html, body {
   position: absolute;
   top: 0;
   background-color: white;
-  width: 500px;
+  width: 712px;
+  transform: translateX(-25%);
 }
 
-.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-header {
+/* Calendar header temporalmente no se usa */
+/* .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -226,7 +228,7 @@ html, body {
   color: #323232;
   font-weight: 200;
   font-size: 14px;
-}
+} */
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body {
   display: flex;
@@ -236,7 +238,7 @@ html, body {
   font-size: 14px;
 }
 
-.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .month {
+/* .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .month {
   flex-grow: 1;
 }
 
@@ -257,4 +259,14 @@ html, body {
   padding: 0;
   margin: 0;
   color: #000;
+} */
+
+/* Componente de date range picker React date range */
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .rdrDefinedRangesWrapper,
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .rdrDateRangeWrapper .rdrDateDisplayWrapper {
+  display: none;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .rdrDateRangeWrapper .rdrMonthAndYearWrapper {
+  padding-top: unset;
 }

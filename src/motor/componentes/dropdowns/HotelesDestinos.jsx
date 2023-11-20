@@ -2,7 +2,7 @@
 import Destinos from "../bloque-destinos/Destinos";
 
 // Componentes
-import { destinosHoteles } from "../constans";
+import { destinosHoteles } from "../../constans";
 
 function HotelesDestinos() {
     return (

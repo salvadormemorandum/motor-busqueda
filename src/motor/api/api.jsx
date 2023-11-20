@@ -1,10 +1,10 @@
 // Iconos
-import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon, ArrowLeft, ArrowRight } from "./Iconos"
+import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon, ArrowLeft, ArrowRight } from "../componentes/Iconos.jsx";
 
 // Dropdowns
-import HotelesDestinos from "./dropdowns/HotelesDestinos"
-import Calendario from "./dropdowns/Calendario"
-import Habitaciones from "./dropdowns/Habitaciones"
+import HotelesDestinos from "../componentes/dropdowns/HotelesDestinos.jsx";
+import Calendario from "../componentes/dropdowns/Calendario.jsx";
+import Habitaciones from "../componentes/dropdowns/Habitaciones.jsx";
 
 /**
  * Función que recibe el nombre del icono y devuelve el icono

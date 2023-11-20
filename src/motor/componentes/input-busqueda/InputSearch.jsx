@@ -1,13 +1,24 @@
 // Dependencias
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 import { PropTypes } from 'prop-types';
 
 // Api
-import { getDropdown, getIcon } from '../api';
+import { getDropdown, getIcon } from '../../api/api';
 
-function InputSearch({ isSearchOpen, id, inputName, inputIcon }) {
+// Contexto
+import { ParametrosBusquedaContext } from '../../Contexto/parametrosBusqueda';
+
+function InputSearch({ isSearchOpen, dato }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const inputRef = useRef(null);
+    const [isInputReadOnly, setIsInputReadOnly] = useState(false);
+    const [inputData, setInputData] = useState();
+    const {
+        getHotel,
+        getFechas,
+        getOcupacion,
+        getCodigo
+    } = useContext(ParametrosBusquedaContext);
 
     /**
      * Función para abrir el dropdown del input
@@ -47,22 +58,55 @@ function InputSearch({ isSearchOpen, id, inputName, inputIcon }) {
         !isSearchOpen && closeDropdown();
     }, [isSearchOpen]);
 
+    /**
+     * Efecto para actualizar el valor del input
+     */
+    useEffect(() => {
+        // Comprueba si en input es de fechas o ocupacion, si lo es, lo pone en modo solo lectura
+        if (dato.id == 2 || dato.id == 3) {
+            setIsInputReadOnly(true);
+        }
+
+        switch (dato.id) {
+            case 1:
+                setInputData(getHotel());
+                break;
+            case 2:
+                if (getFechas() === undefined) return;
+                var fechaEntrada = getFechas().fechaEntrada.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short' });
+                var fechaSalida = getFechas().fechaSalida.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short' });
+                setInputData(`${fechaEntrada} - ${fechaSalida}`);
+                break;
+            case 3:
+                setInputData(`${getOcupacion().habitaciones} habitaciones, ${getOcupacion().adultos} adultos, ${getOcupacion().niños} niños`);
+                break;
+            case 4:
+                setInputData(getCodigo());
+                break;
+            default:
+                setInputData('');
+        }
+    }, [dato.id,
+        setInputData,
+        getHotel,
+        getFechas,
+        getOcupacion,
+        getCodigo]);
+
     return (
         <section className="busqueda" ref={inputRef}>
             <section className="busqueda_input" onClick={openDropdown}>
-                {getIcon(inputIcon)}
-                <input className="busqueda_input_name" type='text' id='' placeholder={inputName}></input>
+                {getIcon(dato.icon)}
+                <input className="busqueda_input_name" type='text' id='' placeholder={dato.name} readOnly={isInputReadOnly} value={inputData}></input>
             </section>
-            {isDropdownOpen && getDropdown(id)}
+            {isDropdownOpen && getDropdown(dato.id)}
         </section>
     )
 }
 
 InputSearch.propTypes = {
     isSearchOpen: PropTypes.bool.isRequired,
-    id: PropTypes.number.isRequired,
-    inputName: PropTypes.string.isRequired,
-    inputIcon: PropTypes.string.isRequired
+    dato: PropTypes.object.isRequired,
 }
 
 export default InputSearch;

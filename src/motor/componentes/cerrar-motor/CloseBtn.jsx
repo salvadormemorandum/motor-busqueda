@@ -2,7 +2,7 @@
 import { PropTypes } from 'prop-types'
 
 // Iconos
-import { getIcon } from '../api'
+import { getIcon } from '../../api/api'
 
 function CloseBtn({ close }) {
     return (
