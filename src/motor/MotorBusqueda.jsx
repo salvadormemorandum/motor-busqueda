@@ -40,6 +40,7 @@ function MotorBusqueda() {
             <input type="submit" value="Buscar" className="motor-busqueda_submit" />
           </section>
         </form>
+
       </section>
     </ParametrosBusquedaProvider>
   )

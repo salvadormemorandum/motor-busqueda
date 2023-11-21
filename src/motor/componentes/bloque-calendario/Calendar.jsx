@@ -1,13 +1,6 @@
 // Dependencias
 import { useEffect, useState, useContext } from "react";
 
-// Api
-//import { getIcon } from "../api"
-
-// Constantes
-// import { months } from "../constans";
-// import Month from "./componentes/Month";
-
 // Estilos
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
@@ -19,11 +12,6 @@ import { DateRangePicker } from 'react-date-range';
 import { ParametrosBusquedaContext } from "../../Contexto/parametrosBusqueda";
 
 function Calendar() {
-
-    // const currentDateRaw = new Date();
-    // const [currentMonth, setCurrentMonth] = useState(months[currentDateRaw.getMonth()]);
-    // const [nextMonth, setNextMonth] = useState(months[currentDateRaw.getMonth() + 1]);
-    // const [currentYear, setCurrentYear] = useState(currentDateRaw.getFullYear());
 
     // Usar dispatch del contexto ParametrosBusquedaContext
     const { dispatch } = useContext(ParametrosBusquedaContext);
@@ -53,22 +41,7 @@ function Calendar() {
 
     return (
         <section className="dropdown-calendar">
-            {/* <header className="calendar-header">
-                <button className="btn-prev">
-                    {getIcon('arrow-left')}
-                </button>
-                <section className="current-months">
-                    <span>{currentMonth} de {currentYear} </span>
-                    -
-                    <span> {nextMonth} de {currentYear}</span>
-                </section>
-                <button className="btn-next">
-                    {getIcon('arrow-right')}
-                </button>
-            </header> */}
             <main className="calendar-body">
-                {/* <Month />
-                <Month /> */}
                 <DateRangePicker
                     ranges={selectedRange}
                     onChange={range => setSelectedRange([range.selection])}

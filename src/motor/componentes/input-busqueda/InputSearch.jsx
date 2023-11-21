@@ -1,5 +1,5 @@
 // Dependencias
-import { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import { PropTypes } from 'prop-types';
 
 // Api
@@ -32,6 +32,14 @@ function InputSearch({ isSearchOpen, dato }) {
      */
     function closeDropdown() {
         setIsDropdownOpen(false);
+    }
+
+    /**
+     * Función para actualizar el valor del input editable
+     * @param {*} input 
+     */
+    function handleInputChange(input) {
+        setInputData(input);
     }
 
     /**
@@ -78,7 +86,10 @@ function InputSearch({ isSearchOpen, dato }) {
                 setInputData(`${fechaEntrada} - ${fechaSalida}`);
                 break;
             case 3:
-                setInputData(`${getOcupacion().habitaciones} habitaciones, ${getOcupacion().adultos} adultos, ${getOcupacion().niños} niños`);
+                var habitaciones = getOcupacion().habitaciones ? `${getOcupacion().habitaciones} habitaciones - ` : '';
+                var adultos = getOcupacion().adultos ? `${getOcupacion().adultos} adultos` : '';
+                var niños = getOcupacion().niños ? ` - ${getOcupacion().niños} niños` : '';
+                setInputData(`${habitaciones}${adultos}${niños}`);
                 break;
             case 4:
                 setInputData(getCodigo());
@@ -97,9 +108,17 @@ function InputSearch({ isSearchOpen, dato }) {
         <section className="busqueda" ref={inputRef}>
             <section className="busqueda_input" onClick={openDropdown}>
                 {getIcon(dato.icon)}
-                <input className="busqueda_input_name" type='text' id='' placeholder={dato.name} readOnly={isInputReadOnly} value={inputData}></input>
+                <input
+                    className="busqueda_input_name"
+                    type='text'
+                    id=''
+                    placeholder={dato.name}
+                    readOnly={isInputReadOnly}
+                    value={inputData}
+                    onChange={(e) => handleInputChange(e.target.value)}>
+                </input>
             </section>
-            {isDropdownOpen && getDropdown(dato.id)}
+            {isDropdownOpen && getDropdown(dato.id, inputData)}
         </section>
     )
 }

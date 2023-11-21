@@ -1,5 +1,5 @@
 // Dependencias
-import { createContext, useEffect, useReducer } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 import { PropTypes } from "prop-types";
 
 // Crear contexto para los parámetros de búsqueda
@@ -9,9 +9,10 @@ const initialState = {
   hotel: '',
   fechaEntrada: '',
   fechaSalida: '',
-  habitaciones: '',
-  adultos: '',
-  niños: '',
+  habitaciones: 1,
+  adultos: 2,
+  niños: 0,
+  bebes: 0,
   codigo: ''
 };
 
@@ -20,13 +21,29 @@ const reducer = (state, action) => {
 
   switch (actionType) {
     case 'UPDATE_HOTEL':
-      return { ...state, hotel: actionPayload };
+      return {
+        ...state,
+        hotel: actionPayload
+      };
     case 'UPDATE_FECHAS':
-      return { ...state, fechaEntrada: actionPayload.fechaEntrada, fechaSalida: actionPayload.fechaSalida };
+      return {
+        ...state,
+        fechaEntrada: actionPayload.fechaEntrada,
+        fechaSalida: actionPayload.fechaSalida
+      };
     case 'UPDATE_OCUPACION':
-      return { ...state, habitaciones: actionPayload.habitaciones, adultos: actionPayload.adultos, niños: actionPayload.niños };
+      return {
+        ...state,
+        habitaciones: actionPayload.habitaciones,
+        adultos: actionPayload.adultos,
+        niños: actionPayload.niños,
+        bebes: actionPayload.bebes
+      };
     case 'UPDATE_CODIGO':
-      return { ...state, codigo: actionPayload };
+      return {
+        ...state,
+        codigo: actionPayload
+      };
     case 'RESET':
       return initialState;
   }
@@ -72,7 +89,8 @@ export function ParametrosBusquedaProvider({ children }) {
     return {
       habitaciones: state.habitaciones,
       adultos: state.adultos,
-      niños: state.niños
+      niños: state.niños,
+      bebes: state.bebes
     };
   }
 

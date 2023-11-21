@@ -1,3 +1,6 @@
+// Dependencias
+import React from 'react';
+
 // Componentes
 import Calendar from "../bloque-calendario/Calendar";
 
