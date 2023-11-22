@@ -40,7 +40,7 @@ function InputSearch({ isSearchOpen, dato }) {
      * @param {*} input 
      */
     function handleInputChange(input) {
-        setInputData(input);
+        setInputData(input.toLowerCase());
 
         if (dato.id === 4) {
             dispatch({
@@ -48,13 +48,6 @@ function InputSearch({ isSearchOpen, dato }) {
                 payload: input
             });
         }
-    }
-
-    /**
-     * Función que maneja el submit del formulario
-     */
-    function handleSubmit() {
-        console.log('submit');
     }
 
     /**
@@ -133,7 +126,7 @@ function InputSearch({ isSearchOpen, dato }) {
                     id=''
                     placeholder={dato.name}
                     readOnly={isInputReadOnly}
-                    value={inputData ? inputData : dato.name}
+                    value={inputData ? inputData : ""}
                     onChange={(e) => handleInputChange(e.target.value)}>
                 </input>
             </section>

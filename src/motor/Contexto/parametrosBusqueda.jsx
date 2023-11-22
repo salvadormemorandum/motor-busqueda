@@ -104,6 +104,13 @@ export function ParametrosBusquedaProvider({ children }) {
     dispatch({ type: 'RESET' });
   }
 
+  /**
+   * Función para enviar los parámetros de búsqueda al servidor
+   */
+  function submitSearchParameters() {
+    console.log(state);
+  }
+
   useEffect(() => {
     console.log(state);
   }, [state]);
@@ -116,7 +123,8 @@ export function ParametrosBusquedaProvider({ children }) {
       getFechas,
       getOcupacion,
       getCodigo,
-      clearParameters
+      clearParameters,
+      submitSearchParameters
     }}>
       {children}
     </ParametrosBusquedaContext.Provider>

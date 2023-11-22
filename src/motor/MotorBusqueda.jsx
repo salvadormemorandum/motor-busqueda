@@ -1,9 +1,10 @@
 // Dependencias
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // Componentes
 import CloseBtn from './componentes/cerrar-motor/CloseBtn';
 import InputSearch from './componentes/input-busqueda/InputSearch';
+import ButtonSubmit from './componentes/input-submit/ButtonSubmit';
 
 // Contexto
 import { ParametrosBusquedaProvider } from './Contexto/parametrosBusqueda';
@@ -35,12 +36,11 @@ function MotorBusqueda() {
           <CloseBtn close={closeSearch} />
         </section>
         <form action="" className="motor-busqueda" onClick={openSearch}>
-          {datosEntrada.map((dato) => <InputSearch key={dato.id} isSearchOpen={isSearchOpen} dato={dato} />)}
-          <section className="motor-busqueda_submit-container">
-            <input type="submit" value="Buscar" className="motor-busqueda_submit" />
+          <section className="inputs">
+            {datosEntrada.map((dato) => <InputSearch key={dato.id} isSearchOpen={isSearchOpen} dato={dato} />)}
           </section>
+          <ButtonSubmit />
         </form>
-
       </section>
     </ParametrosBusquedaProvider>
   )

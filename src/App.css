@@ -53,10 +53,25 @@ html, body {
   flex-grow: 1;
 }
 
+.motor-busqueda_container .motor-busqueda .inputs {
+  display: flex;
+  flex-grow: 1;
+}
+
 .motor-busqueda_container .motor-busqueda .busqueda {
-  flex: 1 1 0;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda:nth-of-type(2),
+.motor-busqueda_container .motor-busqueda .busqueda:nth-of-type(3) {
+  max-width: 300px;
+}
+
+
+.motor-busqueda_container .motor-busqueda .busqueda:nth-of-type(4) {
+  flex-grow: 0;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_input {
@@ -110,6 +125,9 @@ html, body {
   border: 1px solid rgba(222, 226, 230);
   background-color: white;
   border-left: 0;
+}
+
+.motor-busqueda_container.open .motor-busqueda .motor-busqueda_submit-container {
   max-height: 57.6px;
 }
 
