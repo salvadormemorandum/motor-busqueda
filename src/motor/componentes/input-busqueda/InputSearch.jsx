@@ -17,7 +17,8 @@ function InputSearch({ isSearchOpen, dato }) {
         getHotel,
         getFechas,
         getOcupacion,
-        getCodigo
+        getCodigo,
+        dispatch
     } = useContext(ParametrosBusquedaContext);
 
     /**
@@ -40,6 +41,20 @@ function InputSearch({ isSearchOpen, dato }) {
      */
     function handleInputChange(input) {
         setInputData(input);
+
+        if (dato.id === 4) {
+            dispatch({
+                type: 'UPDATE_CODIGO',
+                payload: input
+            });
+        }
+    }
+
+    /**
+     * Función que maneja el submit del formulario
+     */
+    function handleSubmit() {
+        console.log('submit');
     }
 
     /**
@@ -86,10 +101,14 @@ function InputSearch({ isSearchOpen, dato }) {
                 setInputData(`${fechaEntrada} - ${fechaSalida}`);
                 break;
             case 3:
-                var habitaciones = getOcupacion().habitaciones ? `${getOcupacion().habitaciones} habitaciones - ` : '';
-                var adultos = getOcupacion().adultos ? `${getOcupacion().adultos} adultos` : '';
-                var niños = getOcupacion().niños ? ` - ${getOcupacion().niños} niños` : '';
-                setInputData(`${habitaciones}${adultos}${niños}`);
+                var habitaciones = getOcupacion() ? `${getOcupacion().length} habitaciones` : '';
+                // Suma el total adultos de todas las habitaciones
+                var adultos = getOcupacion()?.reduce((total, habitacion) => total + habitacion.adultos, 0);
+                var adultosText = adultos ? ` - ${adultos} adultos` : '';
+                // Suma el total niños de todas las habitaciones
+                var niños = getOcupacion()?.reduce((total, habitacion) => total + habitacion.niños, 0);
+                var niñosText = niños ? ` - ${niños} niños` : '';
+                setInputData(`${habitaciones}${adultosText}${niñosText}`);
                 break;
             case 4:
                 setInputData(getCodigo());
@@ -114,7 +133,7 @@ function InputSearch({ isSearchOpen, dato }) {
                     id=''
                     placeholder={dato.name}
                     readOnly={isInputReadOnly}
-                    value={inputData}
+                    value={inputData ? inputData : dato.name}
                     onChange={(e) => handleInputChange(e.target.value)}>
                 </input>
             </section>

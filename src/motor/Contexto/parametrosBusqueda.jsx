@@ -9,10 +9,13 @@ const initialState = {
   hotel: '',
   fechaEntrada: '',
   fechaSalida: '',
-  habitaciones: 1,
-  adultos: 2,
-  niños: 0,
-  bebes: 0,
+  habitaciones: [
+    {
+      adultos: 2,
+      niños: 0,
+      bebes: 0
+    }
+  ],
   codigo: ''
 };
 
@@ -34,10 +37,7 @@ const reducer = (state, action) => {
     case 'UPDATE_OCUPACION':
       return {
         ...state,
-        habitaciones: actionPayload.habitaciones,
-        adultos: actionPayload.adultos,
-        niños: actionPayload.niños,
-        bebes: actionPayload.bebes
+        habitaciones: actionPayload
       };
     case 'UPDATE_CODIGO':
       return {
@@ -86,12 +86,7 @@ export function ParametrosBusquedaProvider({ children }) {
    * @returns {Object} Objeto con los valores de habitaciones, adultos y niños del estado global
    */
   function getOcupacion() {
-    return {
-      habitaciones: state.habitaciones,
-      adultos: state.adultos,
-      niños: state.niños,
-      bebes: state.bebes
-    };
+    return state.habitaciones;
   }
 
   /**

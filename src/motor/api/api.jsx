@@ -1,5 +1,5 @@
 // Iconos
-import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon, ArrowLeft, ArrowRight, CamaIcon } from "../componentes/Iconos.jsx";
+import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon, ArrowLeft, ArrowRight, CamaIcon, AddIcon, RemoveIcon, PapeleraIcon } from "../componentes/Iconos.jsx";
 
 // Dropdowns
 import HotelesDestinos from "../componentes/dropdowns/HotelesDestinos.jsx";
@@ -29,6 +29,12 @@ export function getIcon(iconName) {
             return <ArrowRight />
         case 'cama':
             return <CamaIcon />
+        case 'añadir':
+            return <AddIcon />
+        case 'eliminar':
+            return <RemoveIcon />
+        case 'papelera':
+            return <PapeleraIcon />
         default:
             return null
     }

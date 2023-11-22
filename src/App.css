@@ -236,16 +236,35 @@ html, body {
 }
 
 /* Dropdown ocupacion */
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion {
+  padding: 0;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion {
+  padding: 10px;
+  border-top: 1px solid rgba(222, 226, 230);
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion:first-of-type {
+  border-top: 0;
+}
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_header .titulo {
   display: flex;
   align-items: center;
   gap: 12px;
   text-transform: uppercase;
   padding: 0;
+  color: #323232;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_body {
-  margin: 6px 0;
+  margin: 12px 0 6px 0;
   padding: 0;
 }
 
@@ -253,10 +272,47 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 14px;
+  color: #474747;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_body .selector .contador {
   display: flex;
   align-items: center;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_footer {
+  margin-bottom: 6px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion button {
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion button.disabled {
+  cursor: default;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion button.disabled svg > * {
+  fill: #b6b6b6;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion button.btn-text {
+  color: #b6b6b6;
+  padding: 0;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion button.btn-text.btn-eliminar {
+  display: flex;
+  align-items: center;
   gap: 6px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .ocupacion_footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(222, 226, 230);
 }
