@@ -29,6 +29,14 @@ function MotorBusqueda() {
     setIsSearchOpen(true);
   }
 
+  /**
+     * Función que maneja el submit del formulario
+     */
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
+
   return (
     <ParametrosBusquedaProvider>
       <section className={isSearchOpen ? "motor-busqueda_container open" : "motor-busqueda_container"}>
@@ -39,7 +47,7 @@ function MotorBusqueda() {
           <section className="inputs">
             {datosEntrada.map((dato) => <InputSearch key={dato.id} isSearchOpen={isSearchOpen} dato={dato} />)}
           </section>
-          <ButtonSubmit />
+          <ButtonSubmit submitAction={handleSubmit} />
         </form>
       </section>
     </ParametrosBusquedaProvider>

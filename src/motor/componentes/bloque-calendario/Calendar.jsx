@@ -10,8 +10,10 @@ import { DateRangePicker } from 'react-date-range';
 
 // Contexto
 import { ParametrosBusquedaContext } from "../../Contexto/parametrosBusqueda";
+import { set } from "date-fns";
 
 function Calendar() {
+    const [isMobile, setIsMobile] = useState(true);
 
     // Usar dispatch del contexto ParametrosBusquedaContext
     const { dispatch } = useContext(ParametrosBusquedaContext);
@@ -39,6 +41,17 @@ function Calendar() {
         }
     }, [selectedRange, dispatch]);
 
+    /**
+     * Comprueba la resolución de la pantalla y muestra en el calendario un mes o dos
+     */
+    useEffect(() => {
+        if (window.innerWidth < 768) {
+            setIsMobile(true);
+        } else {
+            setIsMobile(false);
+        }
+    }, [setIsMobile]);
+
     return (
         <section className="dropdown-calendar">
             <main className="calendar-body">
@@ -50,7 +63,7 @@ function Calendar() {
                     weekdayDisplayFormat="eeeee"
                     color="#5B7E96"
                     rangeColors={['#5B7E96']}
-                    months={2}
+                    months={isMobile ? 1 : 2}
                     direction="horizontal"
                     minDate={new Date()}
                 />

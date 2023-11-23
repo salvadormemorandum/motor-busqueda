@@ -1,5 +1,5 @@
 // Dependencias
-import React, { createContext, useEffect, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import { PropTypes } from "prop-types";
 
 // Crear contexto para los parámetros de búsqueda
@@ -110,10 +110,6 @@ export function ParametrosBusquedaProvider({ children }) {
   function submitSearchParameters() {
     console.log(state);
   }
-
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   return (
     <ParametrosBusquedaContext.Provider value={{

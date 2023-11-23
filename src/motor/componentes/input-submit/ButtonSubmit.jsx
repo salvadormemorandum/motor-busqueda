@@ -1,27 +1,37 @@
 // Dependencias
 import React, { useContext } from 'react';
+import { PropTypes } from 'prop-types';
 
 // Contexto
 import { ParametrosBusquedaContext } from '../../Contexto/parametrosBusqueda';
 
-function ButtonSubmit() {
+function ButtonSubmit({ submitAction }) {
     const {
         submitSearchParameters
     } = useContext(ParametrosBusquedaContext);
 
     /**
-     * Función que maneja el submit del formulario
+     * Handle click on submit button
+     * @param {*} e 
      */
     function handleSubmit(e) {
-        e.preventDefault();
+        submitAction(e);
         submitSearchParameters();
     }
 
     return (
         <section className="motor-busqueda_submit-container">
-            <input type="submit" value="Buscar" className="motor-busqueda_submit" onSubmit={e => handleSubmit(e)} />
+            <button
+                className="motor-busqueda_submit"
+                onClick={(e) => handleSubmit(e)}
+                disabled={false}
+            >BUSCAR</button>
         </section>
     )
+}
+
+ButtonSubmit.propTypes = {
+    submitAction: PropTypes.func.isRequired
 }
 
 export default ButtonSubmit
