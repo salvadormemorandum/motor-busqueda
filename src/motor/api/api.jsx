@@ -1,5 +1,5 @@
 // Iconos
-import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon, ArrowLeft, ArrowRight, CamaIcon, AddIcon, RemoveIcon, PapeleraIcon } from "../componentes/Iconos.jsx";
+import { CloseIcon, LupaIcon, CalendarIcon, PersonasIcon, CodigoIcon, ArrowLeft, ArrowRight, CamaIcon, AddIcon, RemoveIcon, PapeleraIcon, CheckIcon } from "../componentes/Iconos.jsx";
 
 // Dropdowns
 import HotelesDestinos from "../componentes/dropdowns/HotelesDestinos.jsx";
@@ -35,6 +35,8 @@ export function getIcon(iconName) {
             return <RemoveIcon />
         case 'papelera':
             return <PapeleraIcon />
+        case 'check':
+            return <CheckIcon />
         default:
             return null
     }
@@ -46,10 +48,10 @@ export function getIcon(iconName) {
  * @param {*} dropdownID
  * @returns
  */
-export function getDropdown(dropdownID, inputData) {
+export function getDropdown(dropdownID) {
     switch (dropdownID) {
         case 1:
-            return <HotelesDestinos input={inputData} />
+            return <HotelesDestinos />
         case 2:
             return <Calendario />
         case 3:

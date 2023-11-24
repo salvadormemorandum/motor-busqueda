@@ -6,7 +6,7 @@ import { PropTypes } from "prop-types";
 export const ParametrosBusquedaContext = createContext();
 
 const initialState = {
-  hotel: '',
+  hotel: [],
   fechaEntrada: '',
   fechaSalida: '',
   habitaciones: [

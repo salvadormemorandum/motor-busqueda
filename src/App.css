@@ -13,7 +13,7 @@ html, body {
   display: grid;
   place-items: center;
   background-color: #323232;
-  color: white;
+  color: rgba(255,255,255,1);
 }
 
 /* Motor de búsqueda sin abrir */
@@ -36,7 +36,7 @@ html, body {
 }
 
 .motor-busqueda_container .btn-close_container {
-  display: none;
+  display: flex;
   justify-content: flex-end;
   padding: 5px 0;
 }
@@ -63,6 +63,7 @@ html, body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  z-index: 3;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda:nth-of-type(2),
@@ -81,7 +82,7 @@ html, body {
   gap: 12px;
   padding: 16px;
   border: 1px solid rgba(222, 226, 230);
-  background-color: white;
+  background-color: rgba(255,255,255,1);
   border-right: 0;
 }
 
@@ -100,9 +101,32 @@ html, body {
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown {
   border: 1px solid rgba(222, 226, 230);
   border-top: 0;
-  background-color: white;
+  background-color: rgba(255,255,255,1);
   padding: 16px 0;
   max-height: 80vh;
+}
+
+.motor-busqueda_container .mensaje-miembro {
+  display: block;
+  position: absolute;
+  top: 115px;
+}
+
+.motor-busqueda_container .mensaje-miembro .lopesan-members-message {
+  color: #323232;
+  font-size: 13px;
+  font-weight: 200;
+  padding: 0 6px;
+}
+
+.motor-busqueda_container .mensaje-miembro .lopesan-members-message .user,
+.motor-busqueda_container .mensaje-miembro .lopesan-members-message .membership-discount,
+.motor-busqueda_container .mensaje-miembro .lopesan-members-message .lopesan-members {
+  font-weight: 600;
+}
+
+.motor-busqueda_container .mensaje-miembro .lopesan-members-message .membership {
+  color: rgba(91, 126, 150);
 }
 
 /* Scroll bar css */
@@ -124,17 +148,17 @@ html, body {
 .motor-busqueda_container .motor-busqueda .motor-busqueda_submit-container {
   padding: 6px;
   border: 1px solid rgba(222, 226, 230);
-  background-color: white;
+  background-color: rgba(255,255,255,1);
   border-left: 0;
 }
 
 .motor-busqueda_container.open .motor-busqueda .motor-busqueda_submit-container {
-  max-height: 57.6px;
+  max-height: 58.6px;
 }
 
 .motor-busqueda_container .motor-busqueda .motor-busqueda_submit-container .motor-busqueda_submit {
   background-color: #FFAD4F;
-  color: white;
+  color: rgba(255,255,255,1);
   font-weight: 400;
   font-size: 15px;
   text-transform: uppercase;
@@ -154,12 +178,8 @@ html, body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(255,255,255,.95);
+  background-color: rgba(255,255,255,1);
   padding: 20px;
-}
-
-.motor-busqueda_container.open .btn-close_container {
-  display: flex;
 }
 
 .motor-busqueda_container.open .motor-busqueda {
@@ -169,6 +189,44 @@ html, body {
 /* Dropdown de destinos y hoteles */
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos {
   overflow-y: auto;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos .input_filtro {
+  padding: 0 8px;
+  margin-bottom: 10px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos .input_filtro .input_filtro_texto,
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos .input_filtro .input_filtro_texto:focus-visible {
+  width: 100%;
+  padding: 6px 12px;
+  border: 1px solid rgba(222, 226, 230);
+  border-radius: 0;
+  outline: unset;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos .input_filtro .input_filtro_buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos .input_filtro .input_filtro_buttons button {
+  text-transform: uppercase;
+  background-color: rgba(222, 226, 230);
+  color: #323232;
+  font-size: 14px;
+  font-weight: 200;
+  text-align: center;
+  flex-grow: 1;
+  border: 0;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.hoteles-destinos .input_filtro .input_filtro_buttons button:hover {
+  background-color: rgb(194, 198, 200);
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos {
@@ -183,6 +241,7 @@ html, body {
   text-transform: uppercase;
   margin: 0 0 5px 0;
   padding: 0 8px;
+  border-right: 0;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos h3.ubicacion {
@@ -208,10 +267,13 @@ html, body {
   color: #323232;
   padding: 0 8px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel.no-hotel {
-  color: #9B9B9B;
+  color: #B6B6B6;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel:hover {
@@ -231,7 +293,7 @@ html, body {
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar {
   position: absolute;
   top: 0;
-  background-color: white;
+  background-color: rgba(255,255,255,1);
   width: 712px;
   transform: translateX(-25%);
 }
@@ -243,6 +305,7 @@ html, body {
   padding: 12px 24px;
   font-size: 14px;
   border: 1px solid rgba(222, 226, 230);
+  border-top: 0;
 }
 
 /* Componente de date range picker React date range */
@@ -291,6 +354,35 @@ html, body {
   color: #323232;
   font-size: 15px;
   font-weight: 200;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_header button.container-icono-desplegar {
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_header button.container-icono-desplegar div {
+  background-color: #323232;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_header button.container-icono-desplegar .vertical {
+  width: 1px;
+  height: 15px;
+  transition: transform .2s ease-in-out;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_header button.container-icono-desplegar.open .vertical {
+  transform: rotateZ(-90deg);
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_header button.container-icono-desplegar .horizontal {
+  height: 1px;
+  width: 15px;
+  transform: translateX(-55%);
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown.ocupacion .habitacion .habitacion_body {
@@ -381,13 +473,13 @@ html, body {
 
   .motor-busqueda_container .motor-busqueda .motor-busqueda_submit-container .motor-busqueda_submit {
     width: 100%;
-    height: 57.6px;
+    height: 58.6px;
   }
 
   .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar {
-    position: absolute;
+    position: relative;
     top: 0;
-    background-color: white;
+    background-color: rgba(255,255,255,1);
     width: unset;
     transform: unset;
   }
@@ -408,5 +500,10 @@ html, body {
   .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .rdrCalendarWrapper > *,
   .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-calendar .calendar-body .rdrCalendarWrapper .rdrMonth {
     width: 100%;
+  }
+
+  .motor-busqueda_container .mensaje-miembro {
+    position: relative;
+    top: 0;
   }
 }

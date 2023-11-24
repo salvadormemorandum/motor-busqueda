@@ -79,7 +79,7 @@ function InputSearch({ isSearchOpen, dato }) {
      */
     useEffect(() => {
         // Comprueba si en input es de fechas o ocupacion, si lo es, lo pone en modo solo lectura
-        if (dato.id == 2 || dato.id == 3) {
+        if (dato.id == 1 || dato.id == 2 || dato.id == 3) {
             setIsInputReadOnly(true);
         }
 
@@ -130,7 +130,7 @@ function InputSearch({ isSearchOpen, dato }) {
                     onChange={(e) => handleInputChange(e.target.value)}>
                 </input>
             </section>
-            {isDropdownOpen && getDropdown(dato.id, inputData)}
+            {isDropdownOpen && getDropdown(dato.id)}
         </section>
     )
 }

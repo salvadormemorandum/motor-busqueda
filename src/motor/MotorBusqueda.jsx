@@ -40,15 +40,22 @@ function MotorBusqueda() {
   return (
     <ParametrosBusquedaProvider>
       <section className={isSearchOpen ? "motor-busqueda_container open" : "motor-busqueda_container"}>
-        <section className="btn-close_container">
-          <CloseBtn close={closeSearch} />
-        </section>
+        {isSearchOpen &&
+          <section className="btn-close_container">
+            <CloseBtn close={closeSearch} />
+          </section>}
         <form action="" className="motor-busqueda" onClick={openSearch}>
           <section className="inputs">
             {datosEntrada.map((dato) => <InputSearch key={dato.id} isSearchOpen={isSearchOpen} dato={dato} />)}
           </section>
           <ButtonSubmit submitAction={handleSubmit} />
         </form>
+        {isSearchOpen &&
+          <section className="mensaje-miembro">
+            <p className="lopesan-members-message">
+              Bienvenido <span className='user'>Usuario</span> dispones de un <span className="membership-discount">10% de descuento</span> en todas tus reservas directas por tener nivel <span className="membership">Platinum</span> en <span className='lopesan-members'>Lopesan Members</span>
+            </p>
+          </section>}
       </section>
     </ParametrosBusquedaProvider>
   )
