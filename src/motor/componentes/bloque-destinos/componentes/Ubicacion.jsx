@@ -19,14 +19,32 @@ function Ubicacion({ ubicacion, input }) {
      * Función que actualiza el valor del hotel en el estado global
      * @param {*} hotelName 
      */
-    function handleHotelClick(hotelName) {
+    function handleHotelClick(hotel) {
         let hoteles = getHotel();
-        if (hoteles.includes(hotelName)) {
-            hoteles = hoteles.filter((hotel) => hotel !== hotelName);
+        if (hoteles.includes(hotel)) {
+            hoteles = hoteles.filter((hotel) => hotel !== hotel);
         } else {
-            hoteles.push(hotelName);
+            hoteles.push(hotel);
         }
         dispatch({ type: 'UPDATE_HOTEL', payload: hoteles });
+    }
+
+    /**
+     * Función que devuelve un array con las estrellas del hotel
+     * @param {*} hotel 
+     * @returns 
+     */
+    function getHotelStars(hotel) {
+        const star =
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.00004 11.5133L12.12 14L11.0267 9.31333L14.6667 6.16L9.87337 5.74667L8.00004 1.33333L6.12671 5.74667L1.33337 6.16L4.96671 9.31333L3.88004 14L8.00004 11.5133Z" fill="#323232" />
+            </svg>
+            ;
+        const stars = [];
+        for (let i = 0; i < hotel.estrellas; i++) {
+            stars.push(star);
+        }
+        return stars;
     }
 
     /**
@@ -42,13 +60,17 @@ function Ubicacion({ ubicacion, input }) {
             <h3 className="ubicacion">{ubicacion.ubicacion}</h3>
             <ul className="hoteles-list">
                 {hoteles.length ?
-                    hoteles.map((hotel) => <li key={hotel.id} className="hotel" onClick={() => handleHotelClick(hotel.hotel)}>
-                        <section className="hotel_name-stars">
-                            {hotel.hotel}
-                            {/* Estrellas */}
-                        </section>
-                        {getHotel().includes(hotel.hotel) && getIcon('check')}
-                    </li>) :
+                    hoteles.map((hotel) => (
+                        <li key={hotel.id} className="hotel" onClick={() => handleHotelClick(hotel)}>
+                            <section className="hotel_name-stars">
+                                {hotel.hotel}
+                                <section className="stars">
+                                    {getHotelStars(hotel)}
+                                </section>
+                            </section>
+                            {getHotel().includes(hotel) && getIcon('check')}
+                        </li>
+                    )) :
                     <li className='hotel no-hotel'>No se han encontrado hoteles</li>}
             </ul>
         </section>

@@ -85,7 +85,8 @@ function InputSearch({ isSearchOpen, dato }) {
 
         switch (dato.id) {
             case 1:
-                setInputData(getHotel());
+                var hotelesList = getHotel()?.map((hotel) => hotel.hotel).join(', ');
+                setInputData(hotelesList);
                 break;
             case 2:
                 if (getFechas() === undefined) return;

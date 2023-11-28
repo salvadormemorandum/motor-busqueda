@@ -34,57 +34,68 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'Hotel Faro, a Lopesan Collection Hotel',
-            estrellas: 5
+            estrellas: 5,
+            codigo: 'ifafaro'
           },
           {
             id: 2,
             hotel: 'Lopesan Baobab Resort',
-            estrellas: 5
+            estrellas: 5,
+            codigo: 'baobab'
           },
           {
             id: 3,
             hotel: 'Lopesan Costa Meloneras Resort & Spa',
-            estrellas: 5
+            estrellas: 5,
+            codigo: 'costameloneras'
           },
           {
             id: 4,
             hotel: 'Lopesan Villa del Conde Resort & Thalasso',
-            estrellas: 5
+            estrellas: 5,
+            codigo: 'villadelconde'
           },
           {
             id: 5,
             hotel: 'Kumara Serenoa by Lopesan Hotels',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'serenoa'
           },
           {
             id: 6,
             hotel: 'Corallium Beach by Lopesan Hotels',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'ifabeach'
           },
           {
             id: 7,
             hotel: 'Corallium Dunamar by Lopesan Hotels',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'ifadunamar'
           },
           {
             id: 8,
             hotel: 'Abora Catarina by Lopesan Hotels',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'aboracatarina'
           },
           {
             id: 9,
             hotel: 'Abora Interclub by Lopesan Hotels',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'ifaatlantic'
           },
           {
             id: 10,
             hotel: 'Abora Continental by Lopesan Hotels',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'ifacontinental'
           },
           {
             id: 11,
             hotel: 'Abora Buenaventura by Lopesan Hotels',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'ifabuenaventura'
           }
         ]
       },
@@ -95,12 +106,14 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'IFA Altamarena Hotel',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'ifalatamarena'
           },
           {
             id: 2,
             hotel: 'Villas Altamarena',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'villasaltamarena'
           }
         ]
       }
@@ -134,7 +147,8 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'Lopesan Costa Bávaro Resort, Spa & Casino',
-            estrellas: 5
+            estrellas: 5,
+            codigo: 'costabavaro'
           }
         ]
       }
@@ -151,7 +165,8 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'IFA Alpenhof Wildental Hotel',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'alpenhofwild'
           },
           {
             id: 2,
@@ -161,7 +176,8 @@ export const destinosHoteles = [
           {
             id: 3,
             hotel: 'IFA Alpenrose Hotel',
-            estrellas: 3
+            estrellas: 3,
+            codigo: 'alpenrose'
           }
         ]
       }
@@ -178,7 +194,8 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'IFA Schöneck Hotel & Ferienpark',
-            estrellas: 3
+            estrellas: 3,
+            codigo: 'schoneck'
           }
         ]
       },
@@ -189,7 +206,8 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'IFA Fehmarn Hotel & Ferien-Centrum',
-            estrellas: 3
+            estrellas: 3,
+            codigo: 'fehmarn'
           }
         ]
       },
@@ -200,7 +218,8 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'IFA Rügen Hotel & Ferienpark',
-            estrellas: 3
+            estrellas: 3,
+            codigo: 'rugen'
           }
         ]
       },
@@ -211,25 +230,11 @@ export const destinosHoteles = [
           {
             id: 1,
             hotel: 'IFA Graal-Müritz Hotel, Spa & Tagungen',
-            estrellas: 4
+            estrellas: 4,
+            codigo: 'graalmuritz'
           }
         ]
       }
     ]
   }
 ]
-
-// export const months = [
-//   "enero",
-//   "febrero",
-//   "marzo",
-//   "abril",
-//   "mayo",
-//   "junio",
-//   "julio",
-//   "agosto",
-//   "septiembre",
-//   "octubre",
-//   "noviembre",
-//   "diciembre"
-// ]

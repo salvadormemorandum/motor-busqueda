@@ -272,6 +272,16 @@ html, body {
   align-items: center;
 }
 
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel section.hotel_name-stars {
+  gap: 6px;
+}
+
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel section.hotel_name-stars,
+.motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel section.hotel_name-stars .stars {
+  display: flex;
+  align-items: center;
+}
+
 .motor-busqueda_container .motor-busqueda .busqueda .busqueda_dropdown .dropdown-destinos .hoteles-list li.hotel.no-hotel {
   color: #B6B6B6;
 }

@@ -19,7 +19,7 @@ function HotelesDestinos() {
      */
     function handleClickSelectAll(e) {
         e.preventDefault();
-        let hoteles = destinosHoteles.map((destino) => destino.ubicaciones.map((ubicacion) => ubicacion.hoteles.map((hotel) => hotel.hotel))).flat(2);
+        let hoteles = destinosHoteles.map((destino) => destino.ubicaciones.map((ubicacion) => ubicacion.hoteles.map((hotel) => hotel))).flat(2);
         dispatch({ type: 'UPDATE_HOTEL', payload: hoteles });
     }
 

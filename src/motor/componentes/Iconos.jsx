@@ -163,3 +163,15 @@ export function CheckIcon() {
         </svg>
     )
 }
+
+/**
+ * Icono de estrella
+ * @returns 
+ */
+export function StarIcon() {
+    return (
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.00004 11.5133L12.12 14L11.0267 9.31333L14.6667 6.16L9.87337 5.74667L8.00004 1.33333L6.12671 5.74667L1.33337 6.16L4.96671 9.31333L3.88004 14L8.00004 11.5133Z" fill="#323232" />
+        </svg>
+    )
+}
