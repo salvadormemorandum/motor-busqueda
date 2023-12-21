@@ -22,7 +22,7 @@ function Ubicacion({ ubicacion, input }) {
     function handleHotelClick(hotel) {
         let hoteles = getHotel();
         if (hoteles.includes(hotel)) {
-            hoteles = hoteles.filter((hotel) => hotel !== hotel);
+            hoteles = hoteles.filter((hotelListado) => hotelListado.hotel !== hotel.hotel);
         } else {
             hoteles.push(hotel);
         }
