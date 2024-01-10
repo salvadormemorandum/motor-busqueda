@@ -8,6 +8,9 @@ import { getDropdown, getIcon } from '../../api/api';
 // Contexto
 import { ParametrosBusquedaContext } from '../../Contexto/parametrosBusqueda';
 
+// Datos
+import { destinosHoteles } from '../../constans';
+
 function InputSearch({ isSearchOpen, dato }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const inputRef = useRef(null);
@@ -20,6 +23,9 @@ function InputSearch({ isSearchOpen, dato }) {
         getCodigo,
         dispatch
     } = useContext(ParametrosBusquedaContext);
+
+    // Hotel de la página actual
+    const currentHotelId = document.getElementById('codigoHotel').textContent;
 
     /**
      * Función para abrir el dropdown del input
@@ -116,6 +122,20 @@ function InputSearch({ isSearchOpen, dato }) {
         getFechas,
         getOcupacion,
         getCodigo]);
+
+    /**
+     * Efecto que contempla si estamos en la página de un hotel para ponerlo en el buscador como predeterminado
+     */
+    useEffect(() => {
+        if (currentHotelId) {
+            console.log(currentHotelId);
+            let hotel = destinosHoteles.map((destino) => destino.ubicaciones.map((ubicacion) => ubicacion.hoteles.filter((hotel) => hotel.codigo === currentHotelId)));
+            console.log(hotel);
+            let hoteles = [...hotel[0][0]];
+            console.log(hoteles);
+            dispatch({ type: 'UPDATE_HOTEL', payload: hoteles });
+        }
+    }, [currentHotelId, dispatch]);
 
     return (
         <section className="busqueda" ref={inputRef}>
