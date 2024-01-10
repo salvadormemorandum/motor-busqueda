@@ -69,7 +69,7 @@ body {
 
 .motor-busqueda_container .motor-busqueda .busqueda:first-of-type {
   max-width: 460px;
-  min-width: 460px;
+  min-width: 200px;
 }
 
 .motor-busqueda_container .motor-busqueda .busqueda:nth-of-type(2),
